@@ -1,0 +1,83 @@
+@baseUrl = http://localhost:3000/
+@staff = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2Vzc1Rva2VuIjp7ImVtYWlsIjoic3RhZmZAbWFpbC5tYWlsIiwiaWQiOjN9LCJpYXQiOjE2MzAzODM2MTZ9.WzCL7j-eXRevIUSzDGdOAawVu_Z1shByB9_Pk_H8G6A
+@acessToken2 = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2Vzc1Rva2VuIjp7ImVtYWlsIjoiYWRtaW5AbWFpbC5tYWlsIiwiaWQiOjJ9LCJpYXQiOjE2MzAzODIyNDF9.rR8mdUxCZDPMjQ6mhuJ_TA2-JOWRrIRM6A7qMys1dAg
+@accessToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2Vzc1Rva2VuIjp7ImVtYWlsIjoiYWRtaW5AbWFpbC5jb20iLCJpZCI6MzN9LCJpYXQiOjE2MzE5NTU1MjZ9.YfnMnryLz6A8BBzVC6cPGckJFkfzd64lxtxRWeVjF3g
+GET {{baseUrl}}Jobs HTTP/1.1
+Authorization :{{accessToken}}
+
+####
+
+GET http://localhost:3002/customer/Jobs?page=1&pageSize=3 HTTP/1.1
+Authorization :{{accessToken}}
+
+###
+
+POST {{baseUrl}}Jobs HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+Authorization : {{accessToken}}
+
+title=Fullsatck
+&description=Front-End & back-End
+&imgUrl=Foto.png
+&companyId=1
+&jobType=Full Time
+
+###
+
+GET {{baseUrl}}Jobs/2 HTTP/1.1
+Authorization: {{accessToken}}
+
+###
+
+PUT {{baseUrl}}Jobs/3 HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+
+title=Fullstack
+&description=Front-End
+&imgUrl=Foto.png
+&companyId=1
+&jobType=Full Time
+
+###
+
+DELETE {{baseUrl}}Jobs/6 HTTP/1.1
+Authorization: {{staff}}
+
+###
+
+POST {{baseUrl}}customer/Register HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+
+username=admin
+&email=admin@mail.com
+&password=admin
+&phoneNumber=98532457390
+&address=Bandung
+
+###
+
+GET {{baseUrl}}users HTTP/1.1
+Authorization: {{accessToken}}
+
+###
+
+Post http://localhost:3000/Login HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+
+email=admin@mail.com
+&password=admin
+
+###
+
+GET http://localhost:3000/customer/bookmark HTTP/1.1
+
+###
+
+GET http://localhost:3000/customer/Jobs HTTP/1.1
+
+###
+POST  http://localhost:3000/customor/bookmark HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+Authorization: {{accessToken}}
+
+JobId=1
