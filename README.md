@@ -1,6 +1,3 @@
-# p2-cms-integration-server
-CMS Integration Server
-
 # Career Portal Restful API
 
 - Base URL
